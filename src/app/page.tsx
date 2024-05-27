@@ -7,6 +7,8 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { NavBar } from "./components/NavBar";
 
+import '@/app/styles/main.scss'
+
 // This component renders your homepage.
 //
 // Use Next's generateMetadata function to render page metadata.
@@ -37,8 +39,7 @@ export default async function Index() {
   }
 
   return (
-    <div>
-      Homepage
+    <div className="main__container">
       <NavBar homeContent={homeContent} />
     </div>
   );
