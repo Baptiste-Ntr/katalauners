@@ -8,6 +8,7 @@ import { components } from "@/slices";
 import { NavBar } from "./components/NavBar";
 
 import '@/app/styles/main.scss'
+import { MainNews } from "./components/MainNews";
 
 // This component renders your homepage.
 //
@@ -41,6 +42,9 @@ export default async function Index() {
   return (
     <div className="main__container">
       <NavBar homeContent={homeContent} />
+      <div className="main-content__container">
+        <MainNews homeContent={homeContent.main_news} />
+      </div>
     </div>
   );
 }
