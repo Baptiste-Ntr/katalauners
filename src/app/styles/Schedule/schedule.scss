@@ -1,0 +1,142 @@
+@use '../colors' as *;
+
+.schedule__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 750px;
+    grid-column-gap: 50px;
+    font-family: var(--font-poppins);
+    .schedule__item {
+        position: relative;
+        z-index: 2;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 10px 20px;
+        color: $white-font;
+        #schedule-date {
+            font-size: 2rem;
+            font-weight: 900;
+            font-style: italic;
+        }
+        .schedule-item__header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            h1 {
+                font-size: 3rem;
+                font-weight: 900;
+            }
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba($color: #000, $alpha: 0.50);
+            z-index: -1;
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+        }
+    }
+    .schedule__item:nth-child(1) {
+        grid-area: 1 / 1 / 4 / 2;
+        height: 750px;
+        // background: #000;
+    }
+    .schedule__item:nth-child(2) {
+        grid-area: 1 / 2 / 3 / 3;
+        height: 445px;
+        // background: red;
+    }
+
+    .schedule-slots__container {
+        // p {
+        //     font-size: 2rem;
+        //     font-weight: 800;
+        //     margin-bottom: 10px;
+        // }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        width: 100%;
+        #schedule-slots__title {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+        .schedule-slots__item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-direction: column;
+            background: $light-red;
+            padding: 15px 30px;
+            border-radius: 15px;
+            box-shadow: inset 4px 4px 20px 0px rgba(#303030, 0.25);
+            p {
+                font-size: 1.75rem;
+                font-weight: 800;
+                &:nth-child(2) {
+                    font-weight: 200;
+                }
+            }
+        }
+    }
+
+    .schedule__next-match {
+        grid-area: 3 / 2 / 4 / 3;
+        height: 225px;
+        align-self: flex-end;
+        box-shadow: 20px 20px 44px -7px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;;
+        h1 {
+            color: $black-gray;
+        }
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-direction: column;
+            background: $light-red;
+            padding: 15px 30px;
+            border-radius: 15px;
+            box-shadow: inset 4px 4px 20px 0px rgba(#303030, 0.25);
+            p {
+                color: $white-font;
+                font-size: 1.75rem;
+                font-weight: 800;
+        
+                &:nth-child(2) {
+                    font-weight: 200;
+                }
+            }
+        }
+    }
+}
