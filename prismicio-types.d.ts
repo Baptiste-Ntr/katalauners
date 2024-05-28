@@ -313,6 +313,16 @@ export interface ScheduleSliceDefaultPrimary {
   category: prismic.RichTextField;
 
   /**
+   * image field in *Schedule → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: schedule.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
    * Date field in *Schedule → Primary*
    *
    * - **Field Type**: Date
