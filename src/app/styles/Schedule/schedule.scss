@@ -117,7 +117,7 @@
         justify-content: space-around;;
         z-index: 99;
         backdrop-filter: blur(20px);
-        background: #FFFEF8;
+        background: rgba($color: #FFFEF8, $alpha: 0.3);
         h1 {
             color: $black-gray;
         }
