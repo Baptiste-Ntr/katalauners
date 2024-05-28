@@ -84,6 +84,16 @@ export interface HomepageDocumentDataHeaderLeftNavbarItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * Url field in *Homepage → Header Left NavBar*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.header_left_navbar[].url
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  url: prismic.RichTextField;
 }
 
 /**
@@ -99,6 +109,16 @@ export interface HomepageDocumentDataHeaderRightNavbarItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * Url field in *Homepage → Header Right NavBar*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.header_right_navbar[].url
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  url: prismic.RichTextField;
 }
 
 type HomepageDocumentDataSlices3Slice = ScheduleSlice;
