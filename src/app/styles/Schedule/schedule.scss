@@ -115,6 +115,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-around;;
+        z-index: 99;
+        backdrop-filter: blur(20px);
         h1 {
             color: $black-gray;
         }
