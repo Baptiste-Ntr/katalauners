@@ -5,6 +5,12 @@ import * as prismic from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { NavBar } from "./components/NavBar";
+
+import '@/app/styles/main.scss'
+import { MainNews } from "./components/MainNews";
+import { Schedule } from "./components/Schedule";
+import { title } from "process";
 
 // This component renders your homepage.
 //
@@ -14,22 +20,40 @@ import { components } from "@/slices";
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-  const home = await client.getByUID("page", "home");
+  const home = await client.getByUID("homepage", "homepage");
 
   return {
     title: prismic.asText(home.data.title),
-    description: home.data.meta_description,
-    openGraph: {
-      title: home.data.meta_title ?? undefined,
-      images: [{ url: home.data.meta_image.url ?? "" }],
-    },
+    description: prismic.asText(home.data.description) ?? home.data.description,
   };
 }
 
 export default async function Index() {
-  // The client queries content from the Prismic API
-  const client = createClient();
-  const home = await client.getByUID("page", "home");
 
-  return <SliceZone slices={home.data.slices} components={components} />;
+  const client = createClient();
+  const home = await client.getByUID("homepage", "homepage");
+
+  if (!home) {
+    return null;
+  }
+
+  const homeContent = {
+    ...home.data,
+  }
+
+  const nextMatch = {
+    title: homeContent.next_match_title,
+    date: homeContent.next_match_date,
+    location: homeContent.next_match_location,
+  }
+
+  return (
+    <div className="main__container">
+      <NavBar homeContent={homeContent} />
+      <div className="main-content__container">
+        <MainNews homeContent={homeContent.main_news} />
+        <Schedule homeContent={homeContent.slices3} nextMatchData={nextMatch} />
+      </div>
+    </div>
+  );
 }

@@ -1,0 +1,29 @@
+@use './colors' as *;
+
+*,::after,::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-size: 1em;
+}
+
+.main__container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: $background;
+}
+
+.main-content__container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 100px);
+    align-items: center;
+    justify-content: space-around;
+}
+

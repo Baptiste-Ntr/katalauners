@@ -1,9 +1,9 @@
 {
-  "name": "nextjs-starter-prismic-minimal-ts",
+  "name": "Katalauners Baseball Site",
   "version": "0.1.0",
   "private": true,
   "license": "Apache-2.0",
-  "author": "Prismic <contact@prismic.io> (https://prismic.io)",
+  "author": "Popup <contact@popup-agence.fr> (https://popup-agence.fr/)",
   "scripts": {
     "dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
     "next:dev": "next dev",
@@ -19,7 +19,9 @@
     "@prismicio/react": "^2.7.4",
     "next": "^14.1.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sass": "^1.77.2",
+    "swiper": "^11.1.3"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.39",
