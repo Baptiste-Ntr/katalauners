@@ -12,11 +12,51 @@
     .navbar__left-side, .navbar__right-side {
         display: flex;
         gap: 100px;
-        a {
-            color: $black-gray;
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 2rem;
-        }        
+        .navbar__item {
+            cursor: pointer;
+            a {
+                color: $black-gray;
+                text-decoration: none;
+                font-weight: 900;
+                font-size: 2rem;
+        
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    background: $light-red;
+                    transition: width 0.3s;
+                    border-radius: 2px;
+                    margin: auto;
+                }
+        
+                &:hover:after {
+                    content: '';
+                    display: block;
+                    width: 70%;
+                }
+            }
+        }
+        
+        .navbar__item-active {
+            cursor: pointer;
+            a {
+                color: $black-gray;
+                text-decoration: none;
+                font-weight: 900;
+                font-size: 2rem;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 70%;
+                    height: 2px;
+                    background: $light-red;
+                    transition: width 0.3s;
+                    border-radius: 2px;
+                    margin: auto;
+                }
+            }
+        }
     }
 }
