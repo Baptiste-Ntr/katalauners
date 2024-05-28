@@ -50,6 +50,8 @@ export default async function Index() {
   return (
     <div className="main__container">
       <NavBar homeContent={homeContent} />
+      <div id="left-bar"></div>
+      <div id="right-bar"></div>
       <div className="main-content__container">
         <MainNews homeContent={homeContent.main_news} />
         <Schedule homeContent={homeContent.slices3} nextMatchData={nextMatch} />
