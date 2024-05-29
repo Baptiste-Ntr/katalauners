@@ -32,14 +32,14 @@ body {
 
     #right-bar {
         position: absolute;
-        width: 100px;
-        height: 1500px;
+        width: 200px;
+        height: 1400px;
         background: $light-red;
-        bottom: -500px;
+        bottom: -600px;
         right: -100px;
         transform: rotate(55deg);
         opacity: 0;
-        animation: slideInFromRight 0.5s ease-out forwards;
+        animation: slideInFromRight 0.5s 0.3s ease-out forwards;
     }
 }
 
@@ -48,7 +48,8 @@ body {
     width: 100%;
     height: calc(100vh - 100px);
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 200px;
 }
 
 @keyframes slideInFromLeft {
